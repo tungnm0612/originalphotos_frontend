@@ -5,6 +5,7 @@ export default class LoginScreen extends Component {
     state = {
         username: '',
         password: '',
+        loading: false
     }
     componentDidMount(){
         document.title = "OriginalPhotos - Đăng nhập"
@@ -19,11 +20,15 @@ export default class LoginScreen extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault();
+        this.setState({
+            loading: true
+        })
         this.props.onLogin(this.state.username, this.state.password);
     }
 
     render() {
         console.log(this.state);
+        const {loading} = this.state
         return (
             <div className="bgloginscreen">
                 <div>
@@ -47,7 +52,17 @@ export default class LoginScreen extends Component {
 
                                     <div className="custom-control custom-checkbox mb-3">
                                     </div>
-                                    <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Đăng nhập</button>
+                                    <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" disabled={loading}>
+                                        {/* Đăng nhập */}
+                                        {loading && (
+                                            <i
+                                            className="spinner-border text-light"
+                                            style={{ marginRight: "5px" }}
+                                            />
+                                        )}
+                                        {loading && <span>Đang Đăng nhập</span>}
+                                        {!loading && <span>Đăng nhập</span>}
+                                    </button>
                                 </form>
                                 </div>
                             </div>
