@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Headroom from "headroom.js";
 import ProfilePanel from "./ProfilePanel";
+import CheckImage from './CheckImage';
+import Home from './Home';
+import UploadImage from "./UploadImage";
 
 class NavBar extends Component {
 
@@ -22,14 +25,14 @@ class NavBar extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav  ml-auto">
-                <li className="nav-item navhome text-uppercase">
-                  <a className="nav-link js-scroll-trigger" href="/"><b>Trang chủ</b></a>
+              <li className="nav-item navhome text-uppercase">
+                  <Home />
                 </li>
                 <li className="nav-item navcheck text-uppercase">
-                  <a className="nav-link js-scroll-trigger" href="/checkimage"><b>Kiểm tra ảnh</b></a>
+                  <CheckImage/>
                 </li>
                 <li className="nav-item navupload text-uppercase">
-                  <a className="nav-link js-scroll-trigger" href="/uploadimage"><b>Tải ảnh lên</b></a>
+                  <UploadImage/>
                 </li>
                 <li className="nav-item">
                   {/* <a className="nav-link js-scroll-trigger" href="#team">Team</a> */}

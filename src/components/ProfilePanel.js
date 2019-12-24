@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import {Link} from "react-router-dom"
+import {Link} from "react-router-dom"
 // import axios from '../axios'
 
 class ProfilePanel extends Component {
@@ -14,7 +14,8 @@ class ProfilePanel extends Component {
     //   console.log(err);
     // });
     window.localStorage.removeItem('access_token');
-    window.location.href = "/";
+    // window.location.href = "/";
+    window.location.reload();
   }
   // onSubmit = () =>{
     
@@ -23,18 +24,18 @@ class ProfilePanel extends Component {
   render() {
     const display = this.props.username ? (
       <div className="form-inline my-2 my-lg-0">
-        <a className="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <Link className="nav-link dropdown-toggle" to="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Xin chào, {this.props.username}
-        </a>
+        </Link>
         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a className="dropdown-item personal-item" href="/personal">Trang cá nhân</a>
+          <Link className="dropdown-item personal-item" to="/personal">Trang cá nhân</Link>
           <div className="dropdown-divider"></div>
-          <a className="dropdown-item" onClick={this.logout}>Đăng xuất</a>
+          <Link className="dropdown-item" onClick={this.logout} to="">Đăng xuất</Link>
         </div>
       </div>
     ) : (
       <div className="form-inline my-2 my-lg-0">
-        <a className="nav-link dropdown" role="button" href="/login">Đăng nhập</a>
+        <Link className="nav-link dropdown" role="button" to="/login">Đăng nhập</Link>
       </div>
     );
     return (

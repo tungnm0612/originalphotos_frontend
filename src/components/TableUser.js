@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import config from '../config';
 import 'antd/dist/antd.css';
 import { Table, Divider } from 'antd';
@@ -214,7 +214,7 @@ export default class TableUser extends Component {
               render: (text, record, index) =>{
                   return (
                     // <form onSubmit={this.onSubmitViewIamge} id="my_form">
-                        <a className="tagviewimguser" onClick={()=>this.onViewImage(record)} data-toggle="modal" data-target="#imageofuser">{text}</a>
+                        <Link className="tagviewimguser" onClick={()=>this.onViewImage(record)} to="" data-toggle="modal" data-target="#imageofuser">{text}</Link>
                     // </form>
                   )
               },

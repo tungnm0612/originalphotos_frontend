@@ -6,8 +6,8 @@ export default class Home extends Component {
         return (
             <div>
                 <div className="home">
-                    <Link className="" to="/">
-                        TRANG CHỦ 
+                    <Link className="nav-link js-scroll-trigger" to="/">
+                        <b>TRANG CHỦ</b>
                     </Link>
                     {/* <a href="/">Trang chur</a> */}
                 </div>

@@ -4,8 +4,8 @@ export default class CheckImage extends Component {
     render() {
         return (
             <div>
-                <Link to="/checkimage">
-                    KIỂM TRA ẢNH
+                <Link className="nav-link js-scroll-trigger" to="/checkimage">
+                    <b>KIỂM TRA ẢNH</b>
                 </Link>
             </div>
         )

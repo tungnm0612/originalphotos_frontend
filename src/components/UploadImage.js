@@ -4,8 +4,8 @@ export default class UploadImage extends Component {
     render() {
         return (
             <div>
-                <Link to='/uploadimage'>
-                    TẢI ẢNH LÊN
+                <Link className="nav-link js-scroll-trigger" to='/uploadimage'>
+                    <b>TẢI ẢNH LÊN</b>
                 </Link>
             </div>
         )
