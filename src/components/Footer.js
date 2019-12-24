@@ -35,7 +35,7 @@ export default class Footer extends Component {
                 {/* <!-- Footer --> */}
                 <footer className="bg-light py-5">
                     <div className="container">
-                    <div className="small text-center text-muted"><b>Copyright &copy; 2019 - CheckImage</b></div>
+                    <div className="small text-center text-muted"><b>Copyright &copy; 2019 - OriginalPhotos</b></div>
                     </div>
                 </footer>
             </div>

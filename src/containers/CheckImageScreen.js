@@ -41,7 +41,7 @@ export default class CheckImageScreen extends Component {
             console.log(res.data)
             if (res.data.status === true) {
                 await this.setState({
-                    // status: res.data.status,
+                    status: res.data.status,
                     message: res.data.message,
                     email: res.data.infoPhotographer.email,
                     fullname: res.data.infoPhotographer.fullname,
@@ -54,7 +54,7 @@ export default class CheckImageScreen extends Component {
             } else {
                 if (res.data.status === false) {
                     await this.setState({
-                        // status: res.data.status,
+                        status: res.data.status,
                         message: res.data.message
                     })
                     await this.setState({
@@ -68,7 +68,7 @@ export default class CheckImageScreen extends Component {
     render() {
         const {loading} = this.state;
         
-        const info = this.state.message === "Ảnh của bạn là ảnh nguyên gốc" ? (
+        const info = this.state.status === true ? (
             // <div className="col">
             <div className="card-body-info text-dark">
                 <div className="card">
@@ -86,11 +86,19 @@ export default class CheckImageScreen extends Component {
             </div>
             // </div>
         ):(
-            <div className="card-body text-dark">
-                {/* <div className="card"> */}
-                    <h4 className="alert-heading" id="emailAlert">{this.state.message}</h4>
-                {/* </div> */}
-            </div>
+            this.state.status === false ? (
+                <div className="card-body-info card-body-info-false text-dark">
+                    <div className="card">
+                        <h4 className="alert-heading" id="emailAlert">{this.state.message}</h4>
+                        <hr/>
+                        <div className="card-info text-info">
+                            <p>Bạn vui lòng liên hệ với người cung cấp ảnh để tìm hiểu thêm thông tin.</p>
+                        </div>
+                    </div>
+                </div>
+            ): (
+                <div></div>
+            )
         )
         
         return (
@@ -123,6 +131,7 @@ export default class CheckImageScreen extends Component {
                                     <div className="card card-check">
                                         <div className="card-body text-dark title-upload">
                                             <h4 className="" >Chọn ảnh bạn muốn kiểm tra</h4>
+                                            <hr/>
                                             <form encType="multipart/form-data">
                                             <div className="form-group fileimg">
                                                 <input onChange = {this.onChange} type="file" className="form-control-file " name="uploadimage" id="uploadimage" accept="image/*"></input>     

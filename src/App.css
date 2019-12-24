@@ -124,7 +124,12 @@ img {
     padding-top: 20px;
     width: 100%;
   }
-
+  .card-body-info-false{
+    height: 279px;
+  }
+}
+.text-info{
+  text-align: center;
 }
 
 .alert-heading{
