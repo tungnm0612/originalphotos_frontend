@@ -49,21 +49,34 @@ export default class UploadImageScreen extends Component {
                 'content-type': 'multipart/form-data'
             }
         }
-        axios.post(config.rootPath + '/api/images/uploadimage',formData, configes)
-            .then( async (res) => {
+        axios.post(config.rootPath + '/api/users/checkdisabled', {
+            idUser: this.state.idUser
+        }).then(res =>{
+            if(res.data.success === true){
+                console.log(res.data.message)
+                axios.post(config.rootPath + '/api/images/uploadimage',formData, configes)
+                    .then( async (res) => {
+                        console.log(res.data.message);
+                        await this.setState({
+                            loading: false
+                        })
+                        if(res.data.success === true){
+                            await alert(res.data.message);
+                            window.location.href = "/uploadimage"
+                        }else{
+                            await alert(res.data.message);
+                        }
+                    }).catch(err =>{
+                        console.log(err)
+                    })
+            } else {
                 console.log(res.data.message);
-                await this.setState({
+                alert("Tài khoản của bạn đã bị khóa. Xin vui lòng liên hệ với quản trị viên để tìm hiểu nguyên nhân.")
+                this.setState({
                     loading: false
                 })
-                if(res.data.success === true){
-                    await alert(res.data.message);
-                    window.location.href = "/uploadimage"
-                }else{
-                    await alert(res.data.message);
-                }
-            }).catch(err =>{
-                console.log(err)
-            })
+            }
+        })
     }
 
 

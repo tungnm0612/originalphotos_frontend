@@ -243,7 +243,7 @@ export default class TableUser extends Component {
                 align: 'center',
                 render: (text, record, index) => {
                     if (record.disabled === false) {
-                        if (record.username === "admin") {
+                        if (record._id === "5ddd58a4db459b05200cb835") {
                             return (
                                 <span>
                                     <button className="btn btn-outline-secondary btn-sm" disabled>
@@ -275,17 +275,33 @@ export default class TableUser extends Component {
             {
                 align: 'center',
                 key: "changepassword",
-                render: (text, record, index) =>(
-                    <span>
-                        <button className="btn btn-info btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changePasswordModal">
-                            Đổi mật khẩu
-                        </button>
-                        <Divider type="vertical" />
-                        <button className="btn btn-warning btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changeInfoModal">
-                            Sửa thông tin
-                        </button>
-                    </span>
-                )
+                render: (text, record, index) => {
+                    if(record._id === "5ddd58a4db459b05200cb835"){
+                        return (
+                            <span>
+                                <button className="btn btn-info btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changePasswordModal">
+                                    Đổi mật khẩu
+                                </button>
+                                <Divider type="vertical" />
+                                <button className="btn btn-warning btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changeInfoModal">
+                                    Sửa thông tin
+                                </button>
+                            </span>
+                        )
+                    } else {
+                        return (
+                            <span>
+                                <button className="btn btn-info btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changePasswordModal">
+                                    Đặt lại mật khẩu
+                                </button>
+                                <Divider type="vertical" />
+                                <button className="btn btn-warning btn-sm" onClick={()=>this.onchangePassword(record)} data-toggle="modal" data-target="#changeInfoModal">
+                                    Sửa thông tin
+                                </button>
+                            </span>
+                        )
+                    }
+                }
             }
           ];
         return (
