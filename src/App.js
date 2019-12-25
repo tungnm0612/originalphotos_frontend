@@ -21,7 +21,8 @@ import {Route, Switch, withRouter } from "react-router-dom";
 class App extends Component {
   state = {
     username: '',
-    id: ''
+    id: '',
+    loading: false
   };
 
   componentDidMount() {
@@ -43,6 +44,9 @@ class App extends Component {
   }
 
   _onLogin = (username, password) => {
+    this.setState({
+      loading:true
+    })
     axios
       .post(config.rootPath + "/api/auth/login", {
         username: username,
@@ -58,6 +62,9 @@ class App extends Component {
           this.props.history.push("/");
         } else {
           alert(response.data.message)
+          this.setState({
+            loading: false
+          })
         }
       })
       .catch(err => console.error(err));
@@ -125,6 +132,7 @@ class App extends Component {
                   {...props}
                   username={this.state.username}
                   onLogin={this._onLogin}
+                  loading={this.state.loading}
                 />;
               }}
             />

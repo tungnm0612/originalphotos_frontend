@@ -5,7 +5,6 @@ export default class LoginScreen extends Component {
     state = {
         username: '',
         password: '',
-        loading: false
     }
     componentDidMount(){
         document.title = "OriginalPhotos - Đăng nhập"
@@ -20,15 +19,12 @@ export default class LoginScreen extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault();
-        this.setState({
-            loading: true
-        })
         this.props.onLogin(this.state.username, this.state.password);
     }
 
     render() {
         console.log(this.state);
-        const {loading} = this.state
+        const {loading} = this.props
         return (
             <div className="bgloginscreen">
                 <div>
