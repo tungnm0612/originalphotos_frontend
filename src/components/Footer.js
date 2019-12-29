@@ -24,8 +24,6 @@ export default class Footer extends Component {
                             </div>
                             <div className="col-lg-4 mr-auto text-center">
                             <i className="fas fa-envelope fa-3x mb-3 text-muted"><img src={iconemail} alt="" /></i>
-                            {/* <!-- Make sure to change the email address in anchor text AND the link below! --> */}
-                            {/* <a className="d-block" href="mailto:tungnm52@wru.vn">tungnm52@wru.vn</a> */}
                             <br/><br/>
                             <div><b>tungnm52@wru.vn</b></div>
                             </div>

@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "./agency.min.css"
 import "./App.css";
 import config from './config';
 import axios from "./axios";
-// import "antd/dist/antd.css";
 
 import HomeScreen from "./containers/HomeScreen";
-// import AdminScreen from "./containers/AdminScreen";
 import LoginScreen from "./containers/LoginScreen";
 import CheckImageScreen from './containers/CheckImageScreen';
 import UploadImageScreen from './containers/UploadImageScreen';
-// import AddUserScreen from './containers/AddUserScreen';
 import ChangePassword from './containers/ChangePassword';
 import PersonalScreen from './containers/PersonalScreen';
 
@@ -109,25 +105,10 @@ class App extends Component {
                 />;
               }}
             />
-            {/* <Route
-              exact
-              path="/admin"
-              render={props => {
-                return <AdminScreen
-                  {...props}
-                  username={this.state.username}
-                  onLogin={this._onLogin}
-                />;
-              }}
-            /> */}
             <Route
               exact
               path="/login"
               render={props => {
-                // if(this.state.username){
-                //   props.history.push("/");
-                //   return "";
-                // }
                 return <LoginScreen
                   {...props}
                   username={this.state.username}
@@ -136,17 +117,6 @@ class App extends Component {
                 />;
               }}
             />
-            {/* <Route
-              exact
-              path="/admin/adduser"
-              render={props => {
-                return <AddUserScreen
-                  {...props}
-                  username={this.state.username}
-                  onLogin={this._onLogin}
-                />;
-              }}
-            /> */}
             <Route
               exact
               path="/admin/changepassword"

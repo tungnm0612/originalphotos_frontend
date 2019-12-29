@@ -4,10 +4,6 @@ import axios from 'axios';
 import config from '../config';
 import Footer  from '../components/Footer';
 import Portfolio from '../components/Portfolio';
-// import { Upload, message, Button, Icon } from 'antd';
-// import web3 from '../web3';
-// import image from '../image';
-// import Web3 from 'web3';
 
 export default class UploadImageScreen extends Component {
     state = {

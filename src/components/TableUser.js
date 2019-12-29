@@ -34,23 +34,6 @@ export default class TableUser extends Component {
         })
     }
 
-    // onchangeInputChangePassword = async (event) =>{
-    //     // event.preventDefault();
-    //     const changepassword = await event.target.value;
-    //     await this.setState({
-    //         changepassword: changepassword
-    //     })
-    //     await console.log(this.state.changepassword)
-    // }
-
-    // onChangeInputRetypePassword = async (event) => {
-    //     const retypepassword = await event.target.value; 
-    //     await this.setState({
-    //         retypepassword: retypepassword
-    //     })       
-    //     await console.log(this.state.retypepassword) 
-    // }
-    
     //Chang Password
     onchangePassword = async (record) =>{
         // event.preventDefault()
@@ -189,12 +172,17 @@ export default class TableUser extends Component {
                 align: 'center'
             },
             {
-                title: "Thời gian tạo",
+                title: "Thời gian tạo (GMT)",
                 dataIndex: "createdAt",
                 // width: 100,
                 key: "createdAt",
                 align: 'center',
                 // fixed: 'right',
+                render: (text) =>{
+                    return (
+                     <p>{text.replace(/[T]/g, " ").substr(0, 19)}</p>
+                    )
+                }
             },
         ]
 
@@ -311,7 +299,7 @@ export default class TableUser extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="enableActiveModalLabel">Bật hoạt động</h5>
+                            <h5 className="modal-title" id="enableActiveModalLabel">Tắt hoạt động</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -336,7 +324,7 @@ export default class TableUser extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="disableActiveModalLabel">Tắt hoạt động</h5>
+                            <h5 className="modal-title" id="disableActiveModalLabel">Bật hoạt động</h5>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -448,34 +436,8 @@ export default class TableUser extends Component {
             <div className="container tableadmin">
                 <h1>Danh sách các tài khoản</h1>
                 <Table columns={columns} dataSource={this.state.users} />
-                {/* <table className="table">
-                    <thead className="thead-dark">
-                        <tr>
-                            <th scope="col">STT</th>
-                            <th scope="col">Tài Khoản</th>
-                            <th scope="col">Họ và Tên</th>
-                            <th scope="col">Email</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.users.map((user, index) =>{
-                            return(
-                                <tr key = {user._id}>
-                                    <th scope="row">{index + 1}</th>    
-                                    <td>{user.username}</td>
-                                    <td>{user.fullname}</td>
-                                    <td>{user.email}</td>
-                                    <td><button onClick={this.onchangePassword} className="btn btn-secondary btn-sm" type="submit">Đổi mật khẩu</button> <button className="btn btn-secondary btn-sm" type="submit">Bật</button></td>
-                                </tr>
-                            )
-                        })}
-                    </tbody>
-                </table> */}
                 <div >
                     <AddUser/>
-                    {/* <button type="button" className="btn btn-secondary btn-lg">Tạo tài khoản</button> */}
-                    {/* <Link className="btn btn-secondary btn-lg" to="/admin/adduser">Tạo tài khoản</Link> */}
                 </div>
             </div>
             </div>

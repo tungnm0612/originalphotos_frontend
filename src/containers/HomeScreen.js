@@ -27,11 +27,6 @@ class HomeScreen extends Component {
   _onSearchChanged = text => this.setState({ searchString: text });
 
   render() {
-    // const displayedImages = [] || this.state.images.filter(
-    //   img =>
-    //     img.title.includes(this.state.searchString) ||
-    //     img.description.includes(this.state.searchString)
-    // );
 
     return (
       <div className="bg">

@@ -185,10 +185,15 @@ export default class PersonalScreen extends Component {
                 align: 'center'
             },
             {
-                title: "Thời gian tạo",
+                title: "Thời gian tạo (GMT)",
                 dataIndex: "createdAt",
                 key: "createdAt",
-                align: 'center'
+                align: 'center',
+                render: (text) =>{
+                    return (
+                     <p>{text.replace(/[T]/g, " ").substr(0, 19)}</p>
+                    )
+                }
             },
         ]
 

@@ -247,32 +247,7 @@ export default class AdminScreen extends Component {
             <div className="container tableadmin">
                 <h1 className="">Danh sách các tài khoản</h1>
                 <Table columns={columns} dataSource={this.state.users} />
-                {/* <table className="table">
-                    <thead className="thead-dark">
-                        <tr>
-                            <th scope="col">STT</th>
-                            <th scope="col">Tài Khoản</th>
-                            <th scope="col">Họ và Tên</th>
-                            <th scope="col">Email</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.users.map((user, index) =>{
-                            return(
-                                <tr key = {user._id}>
-                                    <th scope="row">{index + 1}</th>    
-                                    <td>{user.username}</td>
-                                    <td>{user.fullname}</td>
-                                    <td>{user.email}</td>
-                                    <td><button onClick={this.onchangePassword} className="btn btn-secondary btn-sm" type="submit">Đổi mật khẩu</button> <button className="btn btn-secondary btn-sm" type="submit">Bật</button></td>
-                                </tr>
-                            )
-                        })}
-                    </tbody>
-                </table> */}
                 <div>
-                    {/* <button type="button" className="btn btn-secondary btn-lg">Tạo tài khoản</button> */}
                     <Link className="btn btn-secondary btn-lg" to="/admin/adduser">Tạo tài khoản</Link>
                 </div>
             </div>

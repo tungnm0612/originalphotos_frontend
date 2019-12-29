@@ -1,26 +1,15 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom"
-// import axios from '../axios'
 
 class ProfilePanel extends Component {
   state= {
 
   }
   logout = () => {
-    // axios.delete("http://localhost:6969/api/auth/logout")
-    // .then(() =>{
-    //   window.location.href = "/";
-    // }).catch((err) =>{
-    //   console.log(err);
-    // });
     window.localStorage.removeItem('access_token');
     // window.location.href = "/";
     window.location.reload();
   }
-  // onSubmit = () =>{
-    
-  // }
-
   render() {
     const display = this.props.username ? (
       <div className="form-inline my-2 my-lg-0">
