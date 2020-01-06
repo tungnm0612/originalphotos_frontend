@@ -91,6 +91,7 @@ export default class PersonalScreen extends Component {
                         key: index + 1,
                         _id: row._id,
                         idUser: row.idUser,
+                        nameImage: row.nameImage,
                         hashImage: row.hashImage,
                         transactionHash: row.transactionHash,
                         createdAt: row.createdAt,
@@ -170,6 +171,12 @@ export default class PersonalScreen extends Component {
                 title: "STT",
                 dataIndex: "key",
                 key: "key",
+                align: 'center'
+            },
+            {
+                title: "Tên ảnh",
+                dataIndex: "nameImage",
+                key: "nameImage",
                 align: 'center'
             },
             {
