@@ -23,7 +23,7 @@ export default class LoginScreen extends Component {
     }
 
     render() {
-        console.log(this.state);
+        // console.log(this.state);
         const {loading} = this.props
         return (
             <div className="bgloginscreen">
