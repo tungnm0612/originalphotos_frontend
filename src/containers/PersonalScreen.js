@@ -225,7 +225,7 @@ export default class PersonalScreen extends Component {
                                 </button>
                             </div>
                             <div className="modal-body">
-                                <form onSubmit={this.onSubmitChangeInfo}>
+                                <form onSubmit={this.onSubmitChangePassword}>
                                 <div className="form-group">
                                     <label htmlFor="recipient-name" className="col-form-label">Mật khẩu mới:</label>
                                     <input type="password" className="form-control" name="changepasswordPersonal" id="changepasswordPersonal" required/>
